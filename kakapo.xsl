@@ -3,7 +3,7 @@
 	<xsl:template match="/">
 		<html>
 			<head>
-				<link rel="stylesheet" type="text/css" href="kakapo.css"/>
+				<link rel="stylesheet" type="text/css" href="t3.css"/>
 			</head>
 			
 			<body>
