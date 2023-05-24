@@ -1,0 +1,13 @@
+<?xml encoding="utf-8"?>
+
+<!ELEMENT r (Titulo,Parrafo+)>
+<!ATTLIST r
+    xmlns CDATA #FIXED ''>
+
+<!ELEMENT Titulo (#PCDATA)>
+<!ATTLIST Titulo
+    xmlns CDATA #FIXED ''>
+
+<!ELEMENT Parrafo (#PCDATA)>
+<!ATTLIST Parrafo
+    xmlns CDATA #FIXED ''>

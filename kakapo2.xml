@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="kakapo.xsl"?>
+<pagina xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///C:/Users/1DAM%26%261DAW/Desktop/trabajo/kakapo/kakapo.xsd">
+	<lista>
+		<titulo>Consultores</titulo>
+		<nombre>Jose Javier "JJ"</nombre>
+		<fechaContribucion año="2023"/>
+		<nombre>Sergio "Sokoh"</nombre>
+		<fechaContribucion año="2023"/>
+		<nombre>Raquel "RachelDLG"</nombre>
+		<fechaContribucion año="2019"/>
+	</lista>
+	<lista>
+		<titulo>Cuidadores de Kakapo</titulo>
+		<nombre>Silvia "KeiKei"</nombre>
+		<nombre>Crona "Cona"</nombre>
+		<nombre>Maria de la Fé de Triana "Marifé"</nombre>
+	</lista>
+	<lista>
+		<titulo>Empresas colaboradoras</titulo>
+		<nombre>Affinity Petcare SA</nombre>
+		<nombre>Piensos Picart SA</nombre>
+		<nombre>Asociación de Defensa de Derechos Animales</nombre>
+	</lista>
+</pagina>

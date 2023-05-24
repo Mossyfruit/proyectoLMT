@@ -1,4 +1,4 @@
-'use strict'
+
 /**
  * En este Fichero Js se encuentran la mayoria de las funciones del juego de Snake. 
  */
@@ -33,7 +33,7 @@ const deseleccionaObjeto = (x, y) => getObjetoEn(x, y).checked = false;
  * @param {*} x posicion fila del objeto a hallar
  * @param {*} y posicion columna del objeto a hallar
  */
-const ponerPuntoEn = (x, y) => {
+const colocarPuntoEn = (x, y) => {
     getObjetoEn(x, y).type = 'radio';
     revisaObjeto(x, y);
 }
@@ -119,28 +119,32 @@ const teclasInput = () => {
     /**
      * creamos un listener de presion de las teclas
      */
-    document.addEventListener('teclaPresion', e => {
+    document.addEventListener('keydown', (e) => {
         /**
          * con el siguiente switch, creamos reglas logicas con operadores ternarios que determinan nuestra direccion de movimiento. 
          * la sintaxis es condicion ? valor1 : valor2, donde, de cumplirse la condicion, se tomara el valor1, y si no, val2.
          * Hacemos break para que se cuente cada vez la direccion. 
          */
+        
         switch(e.key) {
-            case key.teclaArriba:    direccion = direccion === 'abajo' ? 'abajo' : 'arriba'; break;
-            case key.teclaAbajo:  direccion = direccion === 'arriba' ? 'arriba' : 'abajo'; break;
-            case key.teclaIzquierda:  direccion = direccion === 'derecha' ? 'derecha' : 'izquierda'; break;
-            case key.teclaDerecha: direccion = direccion === 'izquierda' ? 'izquierda' : 'derecha'; break;
+            
+            case "ArrowUp":    direccion = direccion === 'down' ? 'down' : 'up'; break;
+            case "ArrowDown":  direccion = direccion === 'up' ? 'up' : 'down'; break;
+            case "ArrowLeft":  direccion = direccion === 'right' ? 'right' : 'left'; break;
+            case "ArrowRight": direccion = direccion === 'left' ? 'left' : 'right'; break;
         }
         /**
          * Si la dirección no esta definida dentro de un intervalo, la funcion moverr nos desplazara en la direccion seleccionada anteriormente, o, en su defecto, 
-         * a la izquierda, y determinara una velocidad (intervalo de movimiento, o, como esta llamado aqui, movimientoIntervalo) 1000/velocidad, donde velocidad
+         * a la left, y determinara una velocidad (intervalo de movimiento, o, como esta llamado aqui, movimientoIntervalo) 1000/velocidad, donde velocidad
          * esta configurada en el config.js
          */
+        e.preventDefault();
         if (movimientoIntervalo === undefined) {
-            movimientoIntervalo = setIntervalo(() => {
-                mover(direccion || 'izquierda');
+            movimientoIntervalo = setInterval(() => {
+                mover(direccion || 'left');
             }, 1000 / velocidad);
         }
+        
     });
 }
 /**
@@ -196,10 +200,10 @@ const mover = direccionS => {
      * si la direccion va en una de las cuatro direcciones
      */
     switch (direccionS) {
-        case 'arriba':    cabeza[1] = cabeza[1] === 1 ? tamanoMundo : cabeza[1] - 1; break;
-        case 'abajo':  cabeza[1] = cabeza[1] === tamanoMundo ? 1 : cabeza[1] + 1; break;
-        case 'izquierda':  cabeza[0] = cabeza[0] === 1 ? tamanoMundo : cabeza[0] - 1; break;
-        case 'derecha': cabeza[0] = cabeza[0] === tamanoMundo ? 1 : cabeza[0] + 1; break;
+        case 'up':    cabeza[1] = cabeza[1] === 1 ? tamanoMundo : cabeza[1] - 1; break;
+        case 'down':  cabeza[1] = cabeza[1] === tamanoMundo ? 1 : cabeza[1] + 1; break;
+        case 'left':  cabeza[0] = cabeza[0] === 1 ? tamanoMundo : cabeza[0] - 1; break;
+        case 'right': cabeza[0] = cabeza[0] === tamanoMundo ? 1 : cabeza[0] + 1; break;
     }
     /**
      * Nuestra condicion de parada del juego, "Game Over", siendo esta una condicion booleana que ocurre
@@ -224,7 +228,7 @@ const mover = direccionS => {
     if (cabeza[0] === posicionPunto[0] && cabeza[1] === posicionPunto[1]) {
         snake.push(cola);
 
-        ponerPuntoEn(...posicionAleatoria());
+        colocarPuntoEn(...posicionAleatoria());
         quitarPuntoEn(...posicionPunto);
         
         cambiaPuntos();

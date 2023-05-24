@@ -1,4 +1,4 @@
-'use strict'
+
 /**
  * Fichero javaScript que genera las casillas para el juego de Snake
  */
@@ -13,7 +13,7 @@ const generaMundo = () => {
         /**
          * Ahora creamos un segundo bucle interno que reconozca el input del usuario, activando la casilla para el movimiento de la serpiente en Snake
          */
-        for (let filaIndice = 0; filaIndice < worldSize; filaIndice++) {
+        for (let filaIndice = 0; filaIndice < tamanoMundo; filaIndice++) {
             const input = document.createElement('input');
     
             input.type = 'checkbox';
@@ -29,4 +29,5 @@ const generaMundo = () => {
 /**
  * y hacemos un builder para llamarlo en otras funciones.
  */
+console.log("Mundo creado correctamente")
 generaMundo();

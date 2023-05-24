@@ -11,18 +11,18 @@
     50%  { transform: scale(2); }
     100% { transform: scale(1); } 
 }
-.menu {
+.iframe{
     box-sizing: border-box;
     background-color: rgb(32, 190, 218);
     box-shadow: inset 1px 1px 1px 1px white;
-    height: 100px;
-    width: 92%;
+    height: 350px;
+    width: 350px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-   margin-left: 8%;
-   margin-top: 3%;
+   margin-left: 70%;
+   margin-top: 10%;
    
 
 }
@@ -75,4 +75,11 @@ nav{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+input {
+    margin: 3px;
+}
+
+input.wave {
+    animation: wave 0.4s cubic-bezier(.17, .67, .83, .67);
 }

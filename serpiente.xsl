@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<xsl:template match="/">
+		<html>
+			<head>
+				<link rel="stylesheet" type="text/css" href="t3.css"/>
+			</head>
+		<body>
+			<xsl:apply-templates/>
+		</body>
+		</html>
+	</xsl:template>
+	
+	<xsl:template match="Parte">
+		<xsl:for-each select="Parte">
+			<div style="font-weight:light">
+				<xsl:value-of select="titulo"/>
+			</div>
+			<div style="margin-bottom:2px">
+			 <p>
+				 <xsl:value-of select="linea"/>
+			
+			 </p>
+			 </div>			
+		</xsl:for-each>
+	</xsl:template>
+</xsl:stylesheet>

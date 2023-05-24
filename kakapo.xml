@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="kakapo.xsl"?>
+<pagina xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///C:/Users/1DAM%26%261DAW/Desktop/trabajo/kakapo/kakapo.xsd">
+	<lista>
+		<titulo>Contribuidores</titulo>
+		<nombre>Agus "Dostendite"</nombre>
+		<fechaContribucion año="2022"/>
+		<nombre>Adri "Adravii"</nombre>
+		<fechaContribucion año="2023"/>
+		<nombre>Iván "Moss"</nombre>
+		<fechaContribucion año="2019"/>
+	</lista>
+	<lista>
+		<titulo>Colaboradores</titulo>
+		<nombre>Dessire "Rella"</nombre>
+		<nombre>Elon "P de Paulo"</nombre>
+		<nombre>John Doe</nombre>
+	</lista>
+	<lista>
+		<titulo>Kakapos adoptados</titulo>
+		<nombre>Spotty</nombre>
+		<nombre>Chai</nombre>
+		<nombre>Pistacho</nombre>
+	</lista>
+</pagina>
