@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./t3.css"/>
-    <title>Preparación proyecto tercer trimestre</title>
+    <title>Juego Snake</title>
 </head>
 <body>
     <div class="sidenav">
@@ -13,14 +13,16 @@
     </div>
     <nav>
         <a href="#">Usuario</a>
-        <h1></h1>
+        
     </nav>
-
-    <div class="menu" id="menu"><p>Menu</p>
-        <button type="button" id="btn1" onclick="boton1()">Un juego</button>
-        <button type="button" id="btn2" onclick="boton2()">Información</button>
+    <div class="snake">
+        <h1>Puntuacion: <span class="score">0</span></h1>
+        <div class="mundo"></div>
     </div>
-    
     <script src="./t3.js"></script>
+    <script src="js/config.js"></script>
+        <script src="js/world.js"></script>
+        <script src="js/snake.js"></script>
+        <script src="js/game.js"></script>
 </body>
 </html>
