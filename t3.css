@@ -1,7 +1,7 @@
 
 :root{
     background-color: #1a689c;
-   
+   cursor:pointer;
      
     
     
@@ -11,18 +11,41 @@
     50%  { transform: scale(2); }
     100% { transform: scale(1); } 
 }
+
+.principal{
+  font-size: 21px;
+  box-sizing: border-box;
+  background-color: rgb(32, 190, 218);
+  box-shadow: inset 1px 1px 1px 1px white;
+  height: 50%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position:absolute;
+  top: 33%;
+  left:33%;
+  color:#A57E9B;;
+  
+
+}
+
 .iframe{
     box-sizing: border-box;
     background-color: rgb(32, 190, 218);
     box-shadow: inset 1px 1px 1px 1px white;
-    height: 350px;
-    width: 350px;
+    height: 50%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-   margin-left: 70%;
-   margin-top: 10%;
+    position:absolute;
+    top: 33%;
+    left:33%;
+    
+
    
 
 }
@@ -45,6 +68,7 @@ nav{
     display: flex;
   }
 .sidenav {
+    
     padding-top: 60px;
     border-radius: 2%;
     border:solid;
@@ -59,6 +83,7 @@ nav{
     overflow-x: hidden;
   }
   .sidenav a {
+    cursor:crosshair;
     border:solid;
     border-color:gray;
     color: white;
@@ -82,4 +107,31 @@ input {
 
 input.wave {
     animation: wave 0.4s cubic-bezier(.17, .67, .83, .67);
+}
+#ajustes {
+  justify-content: center;
+  align-self: flex-start;
+  align-items: baseline;
+  align-content: flex-start;
+  margin-left:10%;
+  
+  color: #000;
+}
+.ajustes{
+ font-size:21px;
+  background-color: rgb(32, 190, 218);
+  box-shadow: inset 1px 1px 1px 1px white;
+  height: 40%;
+  width: 40%;
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+  align-items: center;
+ margin-left: 10%;
+ margin-top: 10%;
+}
+h2{
+  position: fixed;
+  bottom: 3%;
+  left:33%;
 }

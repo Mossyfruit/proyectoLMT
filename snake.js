@@ -124,6 +124,8 @@ const teclasInput = () => {
          * con el siguiente switch, creamos reglas logicas con operadores ternarios que determinan nuestra direccion de movimiento. 
          * la sintaxis es condicion ? valor1 : valor2, donde, de cumplirse la condicion, se tomara el valor1, y si no, val2.
          * Hacemos break para que se cuente cada vez la direccion. 
+         * 
+         * Actualizado al ultimo metodo implementado por Js. El anterior estaba deprecated y daba problemas en ejecucion 
          */
         
         switch(e.key) {
@@ -134,7 +136,7 @@ const teclasInput = () => {
             case "ArrowRight": direccion = direccion === 'left' ? 'left' : 'right'; break;
         }
         /**
-         * Si la dirección no esta definida dentro de un intervalo, la funcion moverr nos desplazara en la direccion seleccionada anteriormente, o, en su defecto, 
+         * Si la dirección no esta definida dentro de un intervalo, la funcion mover nos desplazara en la direccion seleccionada anteriormente, o, en su defecto, 
          * a la left, y determinara una velocidad (intervalo de movimiento, o, como esta llamado aqui, movimientoIntervalo) 1000/velocidad, donde velocidad
          * esta configurada en el config.js
          */
@@ -148,10 +150,10 @@ const teclasInput = () => {
     });
 }
 /**
- * La siguiente funcion inicia una "oleada" o wave, que es una animación para el juego
+ * La siguiente funcion inicia una "oleada" o wave, que es una animación para cuando el juego termina
  * Para ello tenemos que confirmar en que casilla esta la serpiente , despues obtener el objeto
  * de la serpiente que esta controlando el jugador (cabeza) , y finalmente delimita las casillas
- * en las cuales no tiene que realizarse la animacion.
+ * en las cuales no tiene que realizarse la animacion por que ya la ha hecho.
  * @param {*} cabeza 
  */
 const iniciarWave = cabeza => {

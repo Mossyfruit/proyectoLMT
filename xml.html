@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./t3.css"/>
+    <link rel="stylesheet" href="./t3.css"/>
     <title>Preparación proyecto tercer trimestre</title>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -51,45 +51,44 @@
             <button onclick="window.modal.close();">Volver a la página</button>
         </dialog>
     </div>
-    <nav>
-        
-        <p id="username"></p>
-    </nav>
-    <script>
-        function saveUsername() {
-            var username = document.getElementById("usernameInput").value;
-            sessionStorage.setItem("username", username);
-            updateUsername();
+</div>
+<nav>
+    
+    <p id="username"></p>
+</nav>
+<script>
+    function saveUsername() {
+        var username = document.getElementById("usernameInput").value;
+        sessionStorage.setItem("username", username);
+        updateUsername();
+    }
+
+    function updateUsername() {
+        var username = sessionStorage.getItem("username");
+        var usernameElement = document.getElementById("username");
+        if (username) {
+            usernameElement.textContent = username;
+        } else {
+            usernameElement.textContent = "sin identificar";
         }
+    }
 
-        function updateUsername() {
-            var username = sessionStorage.getItem("username");
-            var usernameElement = document.getElementById("username");
-            if (username) {
-                usernameElement.textContent = username;
-            } else {
-                usernameElement.textContent = "sin identificar";
-            }
-        }
+    // Actualizar el username al cargar la pagina. Se perdera cuando se cierre la ventana del navegador.
+    document.addEventListener("DOMContentLoaded", function () {
+        updateUsername();
+    });
+</script>
 
-        // Actualizar el username al cargar la pagina. Se perdera cuando se cierre la ventana del navegador.
-        document.addEventListener("DOMContentLoaded", function () {
-            updateUsername();
-        });
-    </script>
+ 
+    <h2 class="iframe" ><p>Ejemplo XML</p>
+        <iframe 
+        title="Historia sobre Snake"
+        height="600px"
+        width="600px"
+        src="./biblioteca.xml">
 
-     <h1 class="principal">
-    Varios juegos Snake se originaron con el juego arcade Blockade, desarrollado por Gremlin en 1976.La primera versión conocida para microordenador, titulada Worm(Gusano),</br>
-    fue programada en 1978 por P. Trefonas desde Estados Unidos en los ordenadores TRS-80, y fue publicado por CLOAD magazine en el mismo año.</br>
-    Este fue seguido poco después por una versión del mismo autor para los ordenadores Commodore PET y Apple II. P.</br>
-    Trefonas escribió por primera vez una versión de Hustle para microordenadores en 1979, publicada posteriormente por CLOAD magazine.</br>
-    Esta fue luego desarrollada por Milton Bradley para los TI-99/4A en 1980.</br>
-    Algunas versiones mejor conocidas incluyen el ejemplo de Neopets, que es conocido como "Meerca Chase". Su versión revisada es conocida como "Meerca Chase II".</br>
-    Durante un tiempo se incluyó en MS-DOS una variante popular denominada Nibbles.
-    En TimeSplitters 2 se incluyó, como juego oculto, una variante del snake controlado por un joystick analógico denominada Anaconda.</br>
-    La versión incluida en el Nokia N70 y otros modelos posteriores de los móviles Nokia es una versión 3D, con metas por niveles. La versión de los Nokia también tiene una serpiente. 
-    </h1>
-
+        </iframe>
+    </h2>
     
     <script src="./t3.js"></script>
 </body>

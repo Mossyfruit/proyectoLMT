@@ -6,23 +6,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./t3.css"/>
     <title>Juego Snake</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var color = localStorage.getItem("color");
+            var font = localStorage.getItem("font");
+
+            aplicarEstilo(color, font);
+        });
+    </script>
 </head>
 <body>
     <div class="sidenav">
-        <a href="#">Link</a>
+          <a href="./index.html">Pagina principal</a>
+        <a href="./snake.html">Juego serpiente</a>
+        <a href="./xml.html">Pagina XML</a>
+        <a href="./ajustes.html">Ajustes</a>
+        <a onclick="window.modal.showModal();">
+            Modal
+        </a>
+        <dialog id="modal">
+            <p>
+                Iván Hijano Soler 1ºDAW -- Entregado el 27/05/2023<br>
+                En este sitio web encontrarás información sobre el juego conocido como "Snake"<br>
+                En el link "Juego serpiente" hay una version del juego hecha en JavaScript<br>
+                En "Pagina XML" hay un iframe con el XML de prueba "biblioteca" que se uso de ejemplo<br>
+                en clases anteriores.<br>
+                En Ajustes esta la pagina con ajustes y la insercion de un nick de usuario<br>
+                todo ello programado en Js<br>
+                <br>
+                REQUISITOS DEL TRABAJO CUMPLIDOS:<br>
+                1-Menu (Todas las paginas)<br>
+                2-5 paginas que cargan<br>
+                3-Pagina de ajustes con color de fuente y tipo<br>
+                4-Modal (este)<br>
+                5-Familia XML en la pagina ./xml.html<br>
+                6-JavaScript usado en todas las paginas para lectura y modificacion de datos,<br>
+                un juego hecho en JavaScript en ./snake.html cuyas funciones estan dividias en<br>
+                varios archivos .js<br>
+                7-Elementos de entrada de datos HTML: textbox en ./ajustes.html, checkmark y radio en ./snake.html<br>
+                8-Nombre de usuario visible arriba izquierda, conservado en sessionStorage.
+
+                
+            </p>
+            <button onclick="window.modal.close();">Volver a la página</button>
+        </dialog>
     </div>
-    <nav>
-        <a href="#">Usuario</a>
-        
-    </nav>
+</div>
+<nav>
+    
+    <p id="username"></p>
+</nav>
+<script>
+    function saveUsername() {
+        var username = document.getElementById("usernameInput").value;
+        sessionStorage.setItem("username", username);
+        updateUsername();
+    }
+
+    function updateUsername() {
+        var username = sessionStorage.getItem("username");
+        var usernameElement = document.getElementById("username");
+        if (username) {
+            usernameElement.textContent = username;
+        } else {
+            usernameElement.textContent = "sin identificar";
+        }
+    }
+
+    // Actualizar el username al cargar la pagina. Se perdera cuando se cierre la ventana del navegador.
+    document.addEventListener("DOMContentLoaded", function () {
+        updateUsername();
+    });
+</script>
+
     <div class="snake">
         <h1>Puntuacion: <span class="score">0</span></h1>
         <div class="mundo"></div>
+    </div>
+
+    <div>
+        <h2>Tutorial 
+        
+           <button onclick=mostrarTutorial()>Tutorial</button>
+        </h2>    
+
     </div>
     
     <script src="./config.js"></script>
         <script src="./mundo.js"></script>
         <script src="./snake.js"></script>
         <script src="./juego.js"></script>
+        <script src="./t3.js"></script>
 </body>
 </html>
